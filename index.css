@@ -1,0 +1,26 @@
+.jumbo-aux {
+	
+	background-color:white; 
+	opacity:0.9;
+}
+
+.btn-aux{
+	opacity: 0.9; 
+	margin-left:10px;
+}
+
+.div-aux{	
+	background-color:white; 
+	padding: 20px 10px 20px 10px; 
+	border: 1px solid; 
+	border-radius: 15px; 
+	opacity: 0.9;
+}
+
+.div-aux:hover{
+	opacity:1;
+}
+
+tr{
+	cursor:pointer;
+}
