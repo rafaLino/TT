@@ -74,7 +74,7 @@ function mudarAula(tela) {
 	var menuAula3 = document.getElementById("mnAula3");
 	var menuAula4 = document.getElementById("mnAula4");
 	var mnExercicio = document.getElementById("mnExercicio");
-	
+
 
 	divAula0.style.display = "none";
 	divAula1.style.display = "none";
@@ -119,6 +119,61 @@ function mudarAula(tela) {
 			menuAula1.className = "active";
 			break;
 	}
+}
+
+
+function mudarexe(exercicio) {
+	var mnex1 = $("#mnexe1");
+	var mnex2 = $("#mnexe2");
+	var mnex3 = $("#mnexe3");
+	var mnex4 = $("#mnexe4");
+	var mnex5 = $("#mnexe5");
+
+	var ex1 = $("#ex1");
+	var ex2 = $("#ex2");
+	var ex3 = $("#ex3");
+	var ex4 = $("#ex4");
+	var ex5 = $("#ex5");
+
+	$(mnex1).removeClass("active");
+	$(mnex2).removeClass("active");
+	$(mnex3).removeClass("active");
+	$(mnex4).removeClass("active");
+	$(mnex5).removeClass("active");
+	$(ex1).css("display", "none");
+	$(ex2).css("display", "none");
+	$(ex3).css("display", "none");
+	$(ex4).css("display", "none");
+	$(ex5).css("display", "none");
+
+	switch (exercicio) {
+		case 1:
+			$(ex1).css("display", "block");
+			$(mnex1).addClass("active");
+			break;
+		case 2:
+			$(ex2).css("display", "block");
+			$(mnex2).addClass("active");
+			break;
+		case 3:
+			$(ex3).css("display", "block");
+			$(mnex3).addClass("active");
+			break;
+		case 4:
+			$(ex4).css("display", "block");
+			$(mnex4).addClass("active");
+			break;
+		case 5:
+			$(ex5).css("display", "block");
+			$(mnex5).addClass("active");
+			break;
+
+		default:
+			$(ex1).css("display", "block");
+			$(mnex1).addClass("active");
+			break;
+	}
+
 }
 
 function carregaGrid() {

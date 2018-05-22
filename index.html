@@ -2,7 +2,9 @@
 <html>
 
 <head>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	 crossorigin="anonymous"></script> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous"></script>
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -270,7 +272,17 @@
 		<!-- **** FIM ATIVIDADES 5ª AULA **** -->
 		<!-- EXERCICIOS -->
 		<div id="divExercicio" style="display:none;">
-			<div class="div-aux">
+			<nav class="navbar-collapse">
+				<div class="col-md-12">
+					<button id="mnexe1" class="btn btn-md btn-info active" onclick="mudarexe(1);">Exercício 1</button>
+					<button id="mnex2" class="btn btn-md btn-info" onclick="mudarexe(2)">Exercício 2</button>
+					<button id="mnex3" class="btn btn-md btn-info" onclick="mudarexe(3)">Exercício 3</button>
+					<button id="mnex4" class="btn btn-md btn-info" onclick="mudarexe(4)">Exercício 4</button>
+					<button id="mnex5" class="btn btn-md btn-info" onclick="mudarexe(5)">Exercício 5</button>
+				</div>
+			</nav>
+			<!-- Ex 1 -->
+			<div id="ex1" class="div-aux">
 				<form>
 					<div class="row">
 						<div class="form-group col-md-7">
@@ -299,9 +311,9 @@
 									<input type="text" name="cep" placeholder=" _____-___ " class="form-control">
 								</div>
 								<div class="form-group col-md-5">
-										<label for="Cidade">Cidade</label>
-										<input type="text" name="Cidade" placeholder="Cidade" class="form-control">
-									</div>
+									<label for="Cidade">Cidade</label>
+									<input type="text" name="Cidade" placeholder="Cidade" class="form-control">
+								</div>
 								<div class="form-group col-md-3">
 									<label for="Estado">Estado</label>
 									<select name="Estado" class="form-control">
@@ -311,7 +323,7 @@
 										</option>
 									</select>
 								</div>
-								
+
 							</fieldset>
 						</div>
 					</div>
@@ -321,15 +333,15 @@
 								<label for="Email">E-mail</label>
 								<input type="email" name="Email" placeholder="Digite Seu E-mail" class="form-control">
 							</div>
-							<div class="form-group col-md-3">
+							<div class="form-group col-md-2">
 								<label for="Data">Data de Nascimento</label>
 								<input type="date" name="Data" id="" class="form-control">
 							</div>
-							<div class="form-group col-md-5">
+							<div class="form-group col-md-2">
 								<label for="Telefone">Telefone</label>
-								<input type="text" name="Telefone" class="form-control">
+								<input type="text" placeholder="( __ )_____-____" name="Telefone" class="form-control">
 							</div>
-							<div class="form-group col-md-5">
+							<div class="form-group col-md-12">
 								<input type="submit" class="btn btn-success btn-lg btn-block" value="Salvar" class="form-control">
 							</div>
 						</div>
@@ -338,13 +350,33 @@
 			</form>
 		</div>
 
+
+		<!-- Ex 2 -->
+		<div id="ex2" class="div-aux" style="display: none;">
+			<h4>Alinhar inputs usando somente css</h4>
+		</div>
+
+		<!-- Ex 3 -->
+		<div id="ex3" class="div-aux" style="display: none;">
+
+
+		</div>
+
+		<div id="ex4" class="div-aux" style="display: none;">
+			<p>4</p>
+		</div>
+
+		<div id="ex5" class="div-aux" style="display: none;">
+			<p>5</p>
+		</div>
+
+
 	</div>
 	<!-- FIM EXERCICIOS -->
 	</div>
 </body>
 <script src="./index.js"></script>
-<link href="./index.css" rel="stylesheet"></link>
-
+<link href="./index.css" rel="stylesheet" />
 <datalist id="tickmarks">
 	<option value="0" />
 	<option value="1" />
