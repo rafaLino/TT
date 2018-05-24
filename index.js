@@ -9,6 +9,17 @@ function toggleForm() {
 
 }
 
+function logout(){
+	localStorage.removeItem("User");
+	window.location.href= "login.html";
+}
+var usuario = localStorage.getItem("User");
+
+if(usuario == null || usuario == ""){
+	alert("Faça o Login Primeiro");
+	window.location.href = "login.html";
+}
+
 let firstObj = {
 	"id": 1,
 	"nome": "Piloto",
@@ -128,6 +139,11 @@ function mudarexe(exercicio) {
 	var mnex3 = $("#mnexe3");
 	var mnex4 = $("#mnexe4");
 	var mnex5 = $("#mnexe5");
+	var mnex6 = $("#mnexe6");
+	var mnex7 = $("#mnexe7");
+	var mnex8 = $("#mnexe8");
+	var mnex9 = $("#mnexe9");
+	var mnex10 = $("#mnexe10");
 
 	var ex1 = $("#ex1");
 	var ex2 = $("#ex2");
@@ -135,16 +151,36 @@ function mudarexe(exercicio) {
 	var ex4 = $("#ex4");
 	var ex5 = $("#ex5");
 
+	var ex6 = $("#ex6");
+	var ex7 = $("#ex7");
+	var ex8 = $("#ex8");
+	var ex9 = $("#ex9");
+	var ex10 = $("#ex10");
+
+
 	$(mnex1).removeClass("active");
 	$(mnex2).removeClass("active");
 	$(mnex3).removeClass("active");
 	$(mnex4).removeClass("active");
 	$(mnex5).removeClass("active");
+	$(mnex6).removeClass("active");
+	$(mnex7).removeClass("active");
+	$(mnex8).removeClass("active");
+	$(mnex9).removeClass("active");
+	$(mnex10).removeClass("active");
+
+
+
 	$(ex1).css("display", "none");
 	$(ex2).css("display", "none");
 	$(ex3).css("display", "none");
 	$(ex4).css("display", "none");
 	$(ex5).css("display", "none");
+	$(ex6).css("display", "none");
+	$(ex7).css("display", "none");
+	$(ex8).css("display", "none");
+	$(ex9).css("display", "none");
+	$(ex10).css("display", "none");
 
 	switch (exercicio) {
 		case 1:
@@ -166,6 +202,26 @@ function mudarexe(exercicio) {
 		case 5:
 			$(ex5).css("display", "block");
 			$(mnex5).addClass("active");
+			break;
+		case 6:
+			$(ex6).css("display", "block");
+			$(mnex6).addClass("active");
+			break;
+		case 7:
+			$(ex7).css("display", "block");
+			$(mnex7).addClass("active");
+			break;
+		case 8:
+			$(ex8).css("display", "block");
+			$(mnex8).addClass("active");
+			break;
+		case 9:
+			$(ex9).css("display", "block");
+			$(mnex9).addClass("active");
+			break;
+		case 10:
+			$(ex10).css("display", "block");
+			$(mnex10).addClass("active");
 			break;
 
 		default:
@@ -507,6 +563,94 @@ function retornaEndereco(data) {
 }
 
 
+
+function teste() {
+	var input = document.querySelector("#inputText");
+	var acertou = document.querySelector("#acertou");
+	var errou = document.querySelector("#errou");
+
+	if (/^([a-zA-Z0-9-._]{3,})(\@)(\w{3,})(\.)(com)(\.\D{2,})?$/.test(input.value)) {
+		if (errou.style.display == "block")
+			errou.style.display = "none";
+
+		acertou.style.display = "block";
+		setTimeout(function () {
+			acertou.style.display = "none";
+		}, 2300);
+
+	}
+	else {
+		if (acertou.style.display == "block")
+			acertou.style.display = "none";
+
+		errou.style.display = "block";
+
+		setTimeout(function () {
+			errou.style.display = "none";
+		}, 2300);
+
+	}
+}
+
+
+function verSenha() {
+	var element = document.getElementById("senha");
+
+
+	if (element.type == "password") {
+		element.type = "text";
+		element.style.backgroundImage = "url('eye.png')";
+	}
+	else {
+		element.type = "password";
+		element.style.backgroundImage = "url('eye-hidden.png')";
+	}
+}
+
+
+function validaCpf() {
+	var cpf = document.getElementById("cpf");
+	var acertou = document.querySelector("#acertou");
+	var errou = document.querySelector("#errou");
+
+	if (/^(\d{3})(\.)?(\d{3})(\.)?(\d{3})(-)?(\d{2})$/.test(cpf.value)) {
+		if (errou.style.display == "block")
+			errou.style.display = "none";
+
+		acertou.style.display = "block";
+		setTimeout(function () {
+			acertou.style.display = "none";
+		}, 2300);
+
+	}
+	else {
+		if (acertou.style.display == "block")
+			acertou.style.display = "none";
+
+		errou.style.display = "block";
+
+		setTimeout(function () {
+			errou.style.display = "none";
+		}, 2300);
+
+	}
+}
+
+
+function createElementJson(){
+	meuObj = 
+	{
+		"email": document.getElementById("inputText").value,
+		"senha": document.getElementById("senha").value,
+		"cpf": document.getElementById("cpf").value
+	}
+
+	console.log(JSON.stringify(meuObj));
+
+	localStorage.setItem("User",JSON.stringify(meuObj));
+
+	alert(localStorage.getItem("User"));
+}
 
 
 

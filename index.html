@@ -52,6 +52,9 @@
 					<li id="mnExercicio" class="" style="cursor:pointer" onclick="mudarAula(5)">
 						<a>Exercício</a>
 					</li>
+					<li id="logout" class="float-right .float-md-right" style="cursor:pointer" onclick="logout()">
+						<a>Sair</a>
+					</li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -279,6 +282,11 @@
 					<button id="mnex3" class="btn btn-md btn-info" onclick="mudarexe(3)">Exercício 3</button>
 					<button id="mnex4" class="btn btn-md btn-info" onclick="mudarexe(4)">Exercício 4</button>
 					<button id="mnex5" class="btn btn-md btn-info" onclick="mudarexe(5)">Exercício 5</button>
+					<button id="mnex6" class="btn btn-md btn-info" onclick="mudarexe(6)">Exercício 6</button>
+					<button id="mnex7" class="btn btn-md btn-info" onclick="mudarexe(7)">Exercício 7</button>
+					<button id="mnex8" class="btn btn-md btn-info" onclick="mudarexe(8)">Exercício 8</button>
+					<button id="mnex9" class="btn btn-md btn-info" onclick="mudarexe(9)">Exercício 9</button>
+					<button id="mnex10" class="btn btn-md btn-info" onclick="mudarexe(10)">Exercício 10</button>
 				</div>
 			</nav>
 			<!-- Ex 1 -->
@@ -358,7 +366,43 @@
 
 		<!-- Ex 3 -->
 		<div id="ex3" class="div-aux" style="display: none;">
+			<div class="row">
+				<div class="col-md-12">
+					<form>
+						<div class="col-md-6 form-group">
+							<label for="Email">E-mail</label>
+							<input type="text" id="inputText" placeholder="Digite Seu E-mail" name="Email" onkeyup="teste()" autocomplete="off" class="form-control">
+						</div>
+						<div class="col-md-6 form-group">
+							<label for="Senha">Senha</label>
+							<input id="senha" type="password" placeholder="Digite sua Senha" name="Senha" class="form-control senha">
+							<span id="content" style="width: 20px;
+							height: 20px;
+							display: block;
+							position: absolute;
+							right: 20px;
+							top: 30px;
+							cursor: pointer;" onclick="verSenha()"></span>
+						</div>
+						<div class="col-md-6 form-group">
+							<label for="Cpf">CPF</label>
+							<input id="cpf" type="text" placeholder="Digite seu CPF" name="Cpf" onblur="validaCpf()" class="form-control">
+						</div>
+						<div class="col-md-12">
+							<button type="button" class="btn btn-success btn-block" onclick="createElementJson()">Salvar</button>
+						</div>
+						<div class="col-md-12">
+							<div id="acertou" class="col-md-12 alert alert-success" style="display:none;" align="center">
+								<p>Acertou</p>
+							</div>
+							<div id="errou" class="col-md-12 alert alert-danger" style="display:none;" align="center">
+								<p>Errou</p>
+							</div>
+						</div>
 
+					</form>
+				</div>
+			</div>
 
 		</div>
 
@@ -369,6 +413,27 @@
 		<div id="ex5" class="div-aux" style="display: none;">
 			<p>5</p>
 		</div>
+
+		<div id="ex6" class="div-aux" style="display: none;">
+			<p>6</p>
+		</div>
+
+		<div id="ex7" class="div-aux" style="display: none;">
+			<p>7</p>
+		</div>
+
+		<div id="ex8" class="div-aux" style="display: none;">
+			<p>8</p>
+		</div>
+
+		<div id="ex9" class="div-aux" style="display: none;">
+			<p>9</p>
+		</div>
+
+		<div id="ex10" class="div-aux" style="display: none;">
+			<p>10</p>
+		</div>
+
 
 
 	</div>
@@ -390,5 +455,6 @@
 	<option value="9" />
 	<option value="10" />
 </datalist>
+
 
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loginho</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-4" style="margin-top: 10%; border:1px solid black;">
+            <form class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="button" onclick="Validar()">Sign in</button>
+                <div id="alertErrorLogin" class="alert alert-danger" role="alert" style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>Caramba meu!</strong>
+
+                </div>
+                <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+
+    function Validar() {
+        var usuario = JSON.parse(localStorage.getItem("User"));
+        var email = document.getElementById("inputEmail").value;
+        var senha = document.getElementById("inputPassword").value;
+        var alerta = document.getElementById("alertErrorLogin");
+        if (usuario == undefined) {
+            alerta.style.display = "block";
+            return;
+        }
+
+        if (usuario.email.toLowerCase() == email.toLowerCase() && usuario.senha.toLowerCase() == senha.toLowerCase()) {
+            window.location.href = "index.html";
+        } else {
+            alerta.style.display = "block";
+        }
+
+        setTimeout(function () {
+            alerta.style.display = "none";
+        }, 4000);
+
+    }
+
+</script>
+
+
+</html>

@@ -1,1 +1,9 @@
-Testando
+Meu Mercado.
+
+1 - Criar Formulário de Cadastro de Produtos.
+
+2 - criar tela de consulta de Produtos.
+
+3 - links de navegação. 
+
+regras: Usuário só poderá consultar e cadastrar produtos se estiver logado no sistema.
