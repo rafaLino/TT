@@ -46,6 +46,16 @@ function mudarTela(index) {
     }
 }
 
+function validarNome(){
+    var inputNome = document.getElementById("txtNome");
+    if(/^(\D{1,})$/.test(inputNome.value)){
+        inputNome.style.border = "2px solid green";
+    }
+    else{
+        inputNome.style.border = "2px solid red";
+    }
+}
+
 
 function salvarProduto() {
     var nome = document.getElementById("txtNome").value;

@@ -31,10 +31,12 @@
 
 <body>
     <canvas></canvas>
-    <script src="canvas.js"></script>
+    
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a id="mnHome" class="btn navbar-brand active" onclick="mudarTela(0)">Loja</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: url(anel-wp.jpg) no-repeat center;
+        background-size: cover;
+        background-origin: border-box;">
+            <a id="mnHome" class="btn navbar-brand active text-white mr-2" onclick="mudarTela(0)">LOJA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,30 +45,33 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a id="mnCadastro" class="nav-link btn btn-light" onclick="mudarTela(1);" href="#">Cadastrar produtos
+                        <a id="mnCadastro" class="nav-link btn btn-light mr-2" onclick="mudarTela(1);" href="#">Cadastrar produtos
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a id="mnConsulta" class="nav-link btn btn-light" onclick="mudarTela(2);" href="#">Consultar Produtos</a>
+                        <a id="mnConsulta" class="nav-link btn btn-light mr-2" onclick="mudarTela(2);" href="#">Consultar Produtos</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
-                <button type="button" class="btn btn-light" onclick="logOut()"> Sair</button>
+                <button type="button" class="btn btn-light col-md-1" onclick="logOut()"> Sair</button>
             </div>
         </nav>
         <!-- TELA DE CADASTRO -->
-        <main style="margin-top: 30%;">
+        <main class="mt-5">
             <div id="divHome">
-                <div class="div-aux" style="background-image: url('bemvindo.jpg');">
+                <div class="div-aux" style="    background-image: url(bv.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 660px;">
                     
                 </div>
             </div>
-            <div id="divCadastro" style="display: none;">
-                <div class="div-aux">
+            <div id="divCadastro" style="display: none;background-image: url('tela1.jpg');">
+                <div class="div-aux" style="height: 660px;">
                     <form>
                         <div class="row">
                             <h3 class="ml-5">Cadastro de Produto</h3>
@@ -74,7 +79,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="nome">Nome</label>
-                                <input type="text" placeholder="Nome do produto" name="nome" id="txtNome" class="form-control" required>
+                                <input type="text" placeholder="Nome do produto" name="nome" autocomplete="off" onkeypress="validarNome()" id="txtNome" class="form-control" required>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="preco">Preço</label>
@@ -82,7 +87,7 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="descricao">Descrição</label>
-                                <input type="text" placeholder="Descrição do produto" name="descricao" id="txtDescricao" class="form-control" required>
+                                <input type="text" placeholder="Descrição do produto" autocomplete="off" name="descricao" id="txtDescricao" class="form-control" required>
                             </div>
                             <div class="col-md-4">
                                 <button type="button" class="btn btn-lg btn-block btn-success" style="margin-top: 25px;" onclick="salvarProduto();">Salvar</button>
@@ -99,8 +104,10 @@
                 </div>
             </div>
 
-            <div id="divConsulta" style="display: none;">
-                <div class="div-aux">
+            <div id="divConsulta" style="display: none; background: url('tela2.jpg') no-repeat;
+            background-size: cover;
+            ">
+                <div class="div-aux" style="height: 660px;">
                     <div class="row">
 
                         <div class="col-md-11 ml-3 input-group mb-3">
@@ -139,5 +146,7 @@
     </div>
 </body>
 <script src="index.js"></script>
+
+<script src="canvas.js"></script>
 
 </html>

@@ -16,16 +16,25 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
     <title>Login</title>
+
     <style>
-        body{
+        body {
             background-color: #0C101B;
         }
-        canvas{
+
+        canvas {
             overflow: hidden;
             z-index: -1;
-    position: absolute;
+            position: absolute;
         }
 
+        .senha {
+            padding-right: 20px;
+            background-image: url("../eye-hidden.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 30px 30px;
+        }
     </style>
 </head>
 
@@ -33,44 +42,45 @@
     <canvas></canvas>
     <script src="canvas.js"></script>
     <div class="container">
-    <div class="row">
-        <div class="col-md-5 offset-md-3" style="margin-top: 20%; border:1px solid black; border-radius: 5px; background-color:white;">
-            <form class="form-signin">
-                <h1 class="h3 mb-3 font-weight-normal">Logar</h1>
+        <div class="row">
+            <div class="col-md-5 mx-auto" style="margin-top: 20%; border:1px solid black; border-radius: 5px; background-color:white;">
+                <form class="form-signin">
+                    <div class="col-md-12" align="center">
+                        <h1 class="h2 mb-3 mx-auto font-weight-normal">Logar</h1>
+                    </div>
+                    <label for="inputEmail"></label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
 
-                <label for="inputEmail" class="sr-only">Email</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                    <label for="inputPassword"></label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
 
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                    <div class="checkbox my-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="button" onclick="Validar()">Entrar</button>
+                    <button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#modalCadastro">Cadastrar-se</button>
 
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" type="button" onclick="Validar()">Entrar</button>
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalCadastro">Cadastrar-se</button>
+                    <div id="alertErrorLogin" class="alert alert-danger" role="alert" style="display: none;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Caramba meu!</strong>
 
-                <div id="alertErrorLogin" class="alert alert-danger" role="alert" style="display: none;">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>Caramba meu!</strong>
+                    </div>
+                    <div id="alertSuccessLogin" class="alert alert-success" role="alert" style="display: none;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Cadastrado!</strong>
 
-                </div>
-                <div id="alertSuccessLogin" class="alert alert-success" role="alert" style="display: none;">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>Cadastrado!</strong>
-
-                </div>
-                <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
-            </form>
+                    </div>
+                    <p class="mt-5 mb-3 text-muted" align="center">©2018</p>
+                </form>
+            </div>
         </div>
     </div>
-</div>
     <!-- MODAL -->
 
     <div class="modal" id="modalCadastro" tabindex="-1" role="dialog">
@@ -90,7 +100,15 @@
                         </div>
                         <div class="form-group">
                             <label for="insertSenha" class="col-form-label">Senha:</label>
-                            <input type="password" name="insertSenha" class="form-control" id="insertSenha">
+                            <input type="password" name="insertSenha" class="form-control senha" id="insertSenha">
+                            <span id="content" style="width: 20px;
+							height: 20px;
+							display: block;
+							position: absolute;
+							right: 22px;
+							bottom: 39px;
+							cursor: pointer;" onclick="verSenha(insertSenha)">
+                            </span>
                         </div>
                     </form>
                 </div>
@@ -143,6 +161,18 @@
         }, 3000);
 
     }
+    function verSenha(element) {
+
+        if (element.type == "password") {
+            element.type = "text";
+            element.style.backgroundImage = "url('../eye.png')";
+        }
+        else {
+            element.type = "password";
+            element.style.backgroundImage = "url('../eye-hidden.png')";
+        }
+    }
+
 
 </script>
 
