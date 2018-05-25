@@ -33,3 +33,12 @@ tr{
 	background-position: right;
 	background-size: 30px 30px;
 }
+
+
+#btnPesquisar{
+	cursor: pointer;
+}
+
+#btnPesquisar :hover{
+	opacity: 0.6;
+}
