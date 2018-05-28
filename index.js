@@ -13,12 +13,12 @@ function logout(){
 	localStorage.removeItem("User");
 	window.location.href= "login.html";
 }
-var usuario = localStorage.getItem("User");
+// var usuario = localStorage.getItem("User");
 
-if(usuario == null || usuario == ""){
-	alert("Faça o Login Primeiro");
-	window.location.href = "login.html";
-}
+// if(usuario == null || usuario == ""){
+// 	alert("Faça o Login Primeiro");
+// 	window.location.href = "login.html";
+// }
 
 let firstObj = {
 	"id": 1,
@@ -380,7 +380,7 @@ function validaCpf(objeto) {
 		}
 		else {
 			objeto.style.border = "red solid 2px";
-			document.querySelector("#divErradoCerto").innerHTML = `<img src="x.png" style="width:20px;height:20px;" />`;
+			document.querySelector("#divErradoCerto").innerHTML = `<img src="check.png" style="width:20px;height:20px;" />`;
 		}
 	}
 	else {
@@ -418,7 +418,7 @@ function Mascara(o, f) {
 
 /*Função que Executa os objetos*/
 function execmascara() {
-	v_obj.value = v_fun(v_obj.value)
+	v_obj.value = v_fun(v_obj.value);
 }
 
 

@@ -42,3 +42,26 @@ tr{
 #btnPesquisar :hover{
 	opacity: 0.6;
 }
+
+.block{
+	background-color: white;
+	display: inline-block;
+	border:3px solid white;
+	border-radius: 10%;
+	width: 50%;
+	height: 50%;
+	cursor: pointer;
+}
+
+.modal-content {
+	width: auto;
+	height: auto;
+}
+.modal-dialog{
+	width: auto;
+	height: auto;
+}
+.modal{
+	width: auto;
+	height: auto;
+}

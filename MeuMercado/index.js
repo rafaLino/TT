@@ -1,3 +1,14 @@
+$(function(){
+    $(".block").click(function(){
+        var source = $(this).css("background-image");
+        var realSource = source.replace('url(','').replace(')','').replace(/\"/gi, "");
+       
+        $("#imgModal").attr("src", realSource);
+
+        $("#modal").modal();
+
+    });
+});
 
 var usuario = localStorage.getItem("User");
 
@@ -54,6 +65,8 @@ function validarNome(){
     else{
         inputNome.style.border = "2px solid red";
     }
+
+
 }
 
 

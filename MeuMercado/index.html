@@ -27,13 +27,12 @@
             position: absolute;
         }
     </style>
+    <canvas></canvas>
 </head>
 
 <body>
-    <canvas></canvas>
-    
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: url(anel-wp.jpg) no-repeat center;
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: url(tree.jpg) no-repeat center;
         background-size: cover;
         background-origin: border-box;">
             <a id="mnHome" class="btn navbar-brand active text-white mr-2" onclick="mudarTela(0)">LOJA</a>
@@ -67,7 +66,12 @@
                 background-size: cover;
                 background-repeat: no-repeat;
                 height: 660px;">
-                    
+                        <div class="block col-md-3 mx-4" style="background: url('p1.jpg') no-repeat center; background-size: cover;"></div>
+                        <div class="block col-md-3 mx-4" style="background: url('p2.jpg') no-repeat center; background-size: cover;"></div>
+                        <div class="block col-md-3 mx-4" style="background: url('p3.jpg') no-repeat center; background-size: cover;"></div>
+                        <div class="block col-md-3 mx-4" style="background: url('p4.jpg') no-repeat center; background-size: cover;"></div>
+                        <div class="block col-md-3 mx-4" style="background: url('p5.jpg') no-repeat center; background-size: cover;"></div>
+                        <div class="block col-md-3 mx-4" style="background: url('p6.png') no-repeat center; background-size: cover;"></div>
                 </div>
             </div>
             <div id="divCadastro" style="display: none;background-image: url('tela1.jpg');">
@@ -79,7 +83,8 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="nome">Nome</label>
-                                <input type="text" placeholder="Nome do produto" name="nome" autocomplete="off" onkeypress="validarNome()" id="txtNome" class="form-control" required>
+                                <input type="text" placeholder="Nome do produto" name="nome" autocomplete="off" onkeypress="validarNome()" id="txtNome" class="form-control"
+                                    required>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="preco">Preço</label>
@@ -87,7 +92,8 @@
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="descricao">Descrição</label>
-                                <input type="text" placeholder="Descrição do produto" autocomplete="off" name="descricao" id="txtDescricao" class="form-control" required>
+                                <input type="text" placeholder="Descrição do produto" autocomplete="off" name="descricao" id="txtDescricao" class="form-control"
+                                    required>
                             </div>
                             <div class="col-md-4">
                                 <button type="button" class="btn btn-lg btn-block btn-success" style="margin-top: 25px;" onclick="salvarProduto();">Salvar</button>
@@ -118,7 +124,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="ml-3 col-md-11" >
+                        <div class="ml-3 col-md-11">
                             <table id="tabela" class="table">
                                 <thead class="thead-dark">
                                     <tr>
@@ -144,7 +150,17 @@
             </div>
         </main>
     </div>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <img id="imgModal" width="100%" height="100%" src="" alt="NOTFOUND">
+            </div>
+        </div>
+    </div>
 </body>
+
 <script src="index.js"></script>
 
 <script src="canvas.js"></script>
