@@ -136,7 +136,7 @@
 							<button id="btnSpoiler" type="button" class="btn btn-warning">SPOILER!!!</button>
 						</div>
 						<div class="col-md-12">
-							<span id="spanSpoiler" style="display:none;color:red;font-weight:bold">Evair não sabe JavaScript! O:</span>
+							<span id="spanSpoiler" style="display:none;color:red;font-weight:bold">Evair não sabe JavaScript! :O</span>
 						</div>
 					</div>
 					<br />
@@ -145,7 +145,7 @@
 						<div class="col-md-4">
 							<label for="txtCpf">CPF:</label>
 							<input type="text" id="txtCpf" name="txtCpf" maxlength="14" onKeyDown="Mascara(this,Cpf);" onKeyPress="Mascara(this,Cpf);"
-							 onkeyup="validaCpf(this);" />
+							 onkeyup="Mascara(this,cpf);validarCpf(this)" />
 							<div id="divErradoCerto" style="display:inline"></div>
 						</div>
 					</div>
@@ -164,7 +164,7 @@
 							<label for="txtCep">CEP:</label>
 							<br />
 							<input class="form-control" maxlength="8" type="text" id="txtCep" name="txtCep" onkeyup="verificaCepNulo(this)" onblur="buscaCep(this)"
-							 style="display:inline;width:85%" /> &nbsp;
+							 style="display:inline; width:85%;" /> &nbsp;
 							<img id="imgLoad" src="spinner.gif" style="width:20px;height:20px;display:none" />
 						</div>
 					</div>

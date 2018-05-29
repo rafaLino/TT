@@ -369,7 +369,7 @@ function exibeEscondeSpoiler() {
 }
 
 
-function validaCpf(objeto) {
+function validarCpf(objeto) {
 	var cpf = objeto.value;
 	var pattern = new RegExp(/^\d{3}\.?\d{3}\.?\d{3}\-?\d{2}$/);
 
@@ -389,6 +389,7 @@ function validaCpf(objeto) {
 	}
 }
 
+
 function validaEmail(objeto) {
 
 	var email = objeto.value;
@@ -407,11 +408,11 @@ function validaEmail(objeto) {
 
 /*Função Pai de Mascaras*/
 function Mascara(o, f) {
-	v_obj = o
+	v_obj = o;
 
-	v_fun = f
+	v_fun = f;
+	setTimeout("execmascara()", 1);
 
-	setTimeout("execmascara()", 1)
 }
 
 

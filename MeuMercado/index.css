@@ -34,6 +34,10 @@ tr{
 	background-size: 30px 30px;
 }
 
+#logoPastel {
+	width: 280px;
+    height: 80px;
+}
 
 #btnPesquisar{
 	cursor: pointer;
@@ -64,4 +68,9 @@ tr{
 .modal{
 	width: auto;
 	height: auto;
+}
+
+.imgdelete{
+	height: 24px;
+	width: 24px;
 }
